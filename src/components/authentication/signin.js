@@ -1,4 +1,6 @@
 var React = require('react-native');
+var Parse = require('parse/react-native');
+
 var Button = require('../common/button');
 
 var {
@@ -40,7 +42,10 @@ module.exports = React.createClass({
     );
   },
   onPress: function() {
-    // Log the user in
+    Parse.User.logIn(this.state.username, this.state.password, {
+        success: (user) => {console.log(user);},
+        error: (data, error) => {console.log(data, error);}
+    });
   }
 });
 
