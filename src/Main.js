@@ -2,6 +2,7 @@ var React = require('react-native');
 var Parse = require('parse/react-native');
 var Signin = require('./components/authentication/signin');
 var Signup = require('./components/authentication/signup');
+var Photos = require('./components/photos/photos');
 
 var {
 	StyleSheet,
@@ -10,7 +11,8 @@ var {
 
 var ROUTES = {
 	signin: Signin,
-	signup: Signup
+	signup: Signup,
+	photos: Photos
 };
 
 module.exports = React.createClass({
