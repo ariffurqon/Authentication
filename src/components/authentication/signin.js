@@ -1,6 +1,5 @@
 var React = require('react-native');
 var Parse = require('parse/react-native');
-
 var Button = require('../common/button');
 
 var {
@@ -40,8 +39,13 @@ module.exports = React.createClass({
         
         <Text style={styles.label}>{this.state.errorMessage}</Text>
         <Button text={'Sign In'} onPress={this.onPress} />
+        <Button text={'No account yet? please Sign Up'} onPress={this.onSignupPress} />
       </View>
     );
+  },
+  onSignupPress: function(){
+      //navigate  to sign up
+      this.props.navigator.push({name: 'signup'});
   },
   onPress: function() {
     Parse.User.logIn(this.state.username, this.state.password, {
